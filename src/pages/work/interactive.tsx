@@ -32,7 +32,9 @@ const IndexPage: React.FC<PageProps> = ({ data }) => {
       "title: " +
       node.name.replace(/^.{10}|-/g, " ") +
       ", " +
-      node.name.slice(0, 4)
+      node.name.slice(0, 4) +
+      " " +
+      node.childImageSharp.fields.exif.raw.image.Artist
     }`,
   }))
 
@@ -59,6 +61,7 @@ const IndexPage: React.FC<PageProps> = ({ data }) => {
         images={images}
         lightboxOptions={lightboxOptions}
         onClose={onClose}
+        rowMargin="-5"
       />
     </Layout>
   )
@@ -79,6 +82,15 @@ export const pageQuery = graphql`
               placeholder: BLURRED
             )
             full: gatsbyImageData(layout: FULL_WIDTH)
+            fields {
+              exif {
+                raw {
+                  image {
+                    Artist
+                  }
+                }
+              }
+            }
           }
           name
         }

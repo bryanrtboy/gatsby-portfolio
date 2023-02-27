@@ -5,11 +5,11 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import * as React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import * as React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 
-import Header from './header'
-import './layout.css'
+import Header from "./header"
+import "./layout.css"
 
 const Layout: React.FC = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -33,7 +33,12 @@ const Layout: React.FC = ({ children }) => {
           paddingTop: 0,
         }}
       >
-        <main style={{ display: 'inline-block', width: '100%' }}>
+        <main
+          style={{
+            display: "inline-block",
+            width: "100%",
+          }}
+        >
           {children}
         </main>
         <footer>© {new Date().getFullYear()} Bryan Leister</footer>
