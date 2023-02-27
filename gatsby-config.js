@@ -9,10 +9,10 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `Bryan Leister`,
+    description: `Bryan Leister artwork, installations and generative art.`,
+    author: `@bryanrtboy`,
+    siteUrl: `https://bryanleister.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
