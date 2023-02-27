@@ -2,7 +2,7 @@
   A Gatsby Image Portfolio
 </h1>
 
-A portfolio site built with [Gatsby](https://www.gatsbyjs.com/), based off of [gatsby-image-gallery] (https://github.com/browniebroke/gatsby-image-gallery) by @browniebroke.
+A portfolio site built with [Gatsby](https://www.gatsbyjs.com/), based off of [gatsby-image-gallery](https://github.com/browniebroke/gatsby-image-gallery) by [@browniebroke](https://github.com/browniebroke).
 
 ## Project Goals
 
