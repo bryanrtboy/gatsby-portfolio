@@ -99,32 +99,4 @@ export const pageQuery = graphql`
   }
 `
 
-// Create a reusable component that takes a prop for directory
-// const GalleryDirectory = ({ directory = 'installations' }) => {
-//   // Use useStaticQuery hook to get data based on prop value
-//   const data = useStaticQuery(graphql`
-//     query ImagesForGallery($directory: String!) {
-//       images: allFile(
-//         filter: { relativeDirectory: { eq: $directory } }
-//         sort: { name: ASC }
-//       ) {
-//         edges {
-//           node {
-//             childImageSharp {
-//               thumb: gatsbyImageData(
-//                 width: 270
-//                 height: 270
-//                 placeholder: BLURRED
-//               )
-//               full: gatsbyImageData(layout: FULL_WIDTH)
-//             }
-//             name
-//           }
-//         }
-//       }
-//     }
-//   `)
-// }
-//
-
 export default IndexPage

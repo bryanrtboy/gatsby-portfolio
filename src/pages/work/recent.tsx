@@ -70,7 +70,7 @@ const IndexPage: React.FC<PageProps> = ({ data }) => {
 export const pageQuery = graphql`
   query ImagesForGallery {
     images: allFile(
-      filter: { name: { regex: "/2020-/" } }
+      filter: { name: { regex: "/(2022-|2023-)/i" } }
       sort: { name: ASC }
     ) {
       edges {

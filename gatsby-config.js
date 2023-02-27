@@ -11,7 +11,7 @@ module.exports = {
   siteMetadata: {
     title: `Bryan Leister`,
     description: `Bryan Leister artwork, installations and generative art.`,
-    author: `@bryanrtboy`,
+    author: `@rtboy`,
     siteUrl: `https://bryanleister.com`,
   },
   plugins: [

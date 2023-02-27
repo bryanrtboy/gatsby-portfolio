@@ -1,5 +1,5 @@
-import { Link, graphql, useStaticQuery } from 'gatsby'
-import * as React from 'react'
+import { Link, graphql, useStaticQuery } from "gatsby"
+import * as React from "react"
 
 export default function Menu() {
   const data = useStaticQuery(graphql`
@@ -17,24 +17,41 @@ export default function Menu() {
   `)
   return (
     <ul>
-      {' '}
-      {data.allSitePage.nodes.map((node) => (
+      <li
+        key="/about/"
+        style={{
+          textDecoration: "none",
+          display: "inline",
+        }}
+      >
+        <Link
+          to="/about/"
+          style={{
+            color: "black",
+            textDecoration: "none",
+            display: "inline-block",
+          }}
+        >
+          about
+        </Link>
+      </li>{" "}
+      {data.allSitePage.nodes.map(node => (
         <li
           key={node.path}
           style={{
-            textDecoration: 'none',
-            display: 'inline',
+            textDecoration: "none",
+            display: "inline",
           }}
         >
           <Link
             to={node.path}
             style={{
-              color: 'black',
-              textDecoration: 'none',
-              display: 'inline-block',
+              color: "black",
+              textDecoration: "none",
+              display: "inline-block",
             }}
           >
-            {node.path.replace(/\/work\//g, '').replace(/\/$/, '')}
+            {node.path.replace(/\/work\//g, "").replace(/\/$/, "")}
           </Link>
         </li>
       ))}
