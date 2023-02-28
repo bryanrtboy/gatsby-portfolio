@@ -627,6 +627,29 @@ pre tt:before,
 pre tt:after {
   content: "";
 }
+
+.parent-menu {
+  position: relative;
+  display: inline-block;
+  min-height: 1rem;
+  list-style-type: none;
+  margin-left: 1rem;
+}
+
+.child-menu {
+  position: absolute;
+  list-style-type: none;
+  visibility: hidden;
+  background-color: #f1f1f1;
+  top: 100%;
+  left: 0;
+  margin-left: -30px;
+  z-index: 9999; /* a high value */
+}
+
+.parent-menu:hover .child-menu {
+  visibility: visible;
+}
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;

@@ -10,19 +10,21 @@
 module.exports = {
   siteMetadata: {
     title: `Bryan Leister`,
-    description: `Bryan Leister artwork, installations and generative art.`,
+    description: `Bryan Leister's paintings, prints, installations, interactive and generative artwork.`,
     author: `@rtboy`,
-    siteUrl: `https://bryanleister.com`,
+    siteUrl: `https://bryanleister.com/`,
   },
   plugins: [
-    `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: `content`,
+        path: `${__dirname}/src/content`,
       },
     },
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-mdx`,
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -36,9 +38,9 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/content/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    "gatsby-plugin-sharp-exif",
+    `gatsby-plugin-sharp-exif`,
   ],
 }

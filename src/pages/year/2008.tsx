@@ -5,7 +5,7 @@ import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import Gallery from "@browniebroke/gatsby-image-gallery"
 
-const pageTitle: string = "recent"
+const pageTitle: string = "2008"
 
 interface ImageSharpEdge {
   node: {
@@ -61,16 +61,14 @@ const IndexPage: React.FC<PageProps> = ({ data }) => {
         images={images}
         lightboxOptions={lightboxOptions}
         onClose={onClose}
-        //rowMargin="-5"
       />
     </Layout>
   )
 }
-
 export const pageQuery = graphql`
   query ImagesForGallery {
     images: allFile(
-      filter: { name: { regex: "/(2022-|2023-)/i" } }
+      filter: { name: { regex: "/2008-/" } }
       sort: { name: ASC }
     ) {
       edges {

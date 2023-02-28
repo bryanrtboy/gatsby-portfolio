@@ -61,7 +61,7 @@ const IndexPage: React.FC<PageProps> = ({ data }) => {
         images={images}
         lightboxOptions={lightboxOptions}
         onClose={onClose}
-        rowMargin="-5"
+        //rowMargin="-5"
       />
     </Layout>
   )
@@ -69,7 +69,7 @@ const IndexPage: React.FC<PageProps> = ({ data }) => {
 export const pageQuery = graphql`
   query ImagesForGallery {
     images: allFile(
-      filter: { relativeDirectory: { eq: "paintings" } }
+      filter: { relativeDirectory: { eq: "images/paintings" } }
       sort: { name: ASC }
     ) {
       edges {

@@ -1,12 +1,12 @@
-import { Link, graphql } from 'gatsby'
-import * as React from 'react'
-import Menu from './menu'
+import { Link, graphql } from "gatsby"
+import * as React from "react"
+import Menu from "./menu"
 
 interface HeaderProps {
   siteTitle: string
 }
 
-const Header: React.FC<HeaderProps> = ({ siteTitle = '' }) => (
+const Header: React.FC<HeaderProps> = ({ siteTitle = "" }) => (
   <header
     style={{
       background: `white`,
@@ -16,7 +16,7 @@ const Header: React.FC<HeaderProps> = ({ siteTitle = '' }) => (
     <div
       style={{
         margin: `0 auto`,
-        maxWidth: 960,
+        maxWidth: 1200,
         padding: `1.45rem 1.0875rem`,
       }}
     >
@@ -33,7 +33,7 @@ const Header: React.FC<HeaderProps> = ({ siteTitle = '' }) => (
         </Link>
       </h1>
       <h5>
-        <Menu> </Menu>
+        <Menu />
       </h5>
     </div>
   </header>
