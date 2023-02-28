@@ -12,7 +12,7 @@ module.exports = {
     title: `Bryan Leister`,
     description: `Bryan Leister's paintings, prints, installations, interactive and generative artwork.`,
     author: `@rtboy`,
-    siteUrl: `https://bryanleister.com/`,
+    siteUrl: `https://bryanleister.com/new/`,
   },
   plugins: [
     {
@@ -22,8 +22,6 @@ module.exports = {
         path: `${__dirname}/src/content`,
       },
     },
-    `gatsby-transformer-remark`,
-    `gatsby-plugin-mdx`,
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

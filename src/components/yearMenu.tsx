@@ -3,13 +3,10 @@ import * as React from "react"
 
 export default function YearMenu() {
   const data = useStaticQuery(graphql`
-    query {
-      allFile(
-        filter: { relativeDirectory: { eq: "year" } }
-        sort: { name: ASC }
-      ) {
+    query Links {
+      allSitePage(filter: { path: { regex: "/(year)/.+/" } }) {
         nodes {
-          name
+          path
         }
       }
     }
@@ -21,22 +18,22 @@ export default function YearMenu() {
         padding: "2px",
       }}
     >
-      {data.allFile.nodes.map(node => (
+      {data.allSitePage.nodes.map(node => (
         <li
-          key={node.name}
+          key={node.path}
           style={{
             padding: "2px",
           }}
         >
           <a
-            href={"/year/" + node.name}
+            href={node.path}
             style={{
               textDecoration: "none",
               color: "black",
               padding: "2px",
             }}
           >
-            {node.name}
+            {node.path.replace(/\/year\//g, "").replace(/\/$/, "")}
           </a>
         </li>
       ))}
