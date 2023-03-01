@@ -24,8 +24,9 @@ This is not designed to be a blog site with frequent text updates. The single go
 - Step 1: Gather together all of your high-resolution scans and photos of your artwork
 - Step 2: Name your images using this format (!IMPORTANT) '1995-02-17-Title-of-my-Artwork.jpg' replacing 'Title-of-my-Artwork' with your title and using '-' for spaces. Don't use any funny characters like /,$,%,.,;, and make sure only one '.' is used prior to a three letter extensioin of .jpg, .png or .psd. GIF images are probably OK, but will not be re-sized by Gatsby, so stick to .jpg , .png or .psd at this stage.
 - Step 3: Export or convert your high-res images to something reasonable in size, like 2000 pixels on the longest dimension or less. As part of the export process, decrease the quality from maximum (no compression) to high and make sure the resulting files are in RGB format as .jpg or .png
-- Step 4: Decide on your main media categories and create a folder named form each, as I have done. Drag your web-ready images into those folders
+- Step 4: Decide on your main media categories and create a folder named for each, as I have done. Drag your web-ready images into those folders
 -- All media/subject pages are based on the folder name, i.e. 'interactive' work resides in the 'images/interactive' folder. The interactive.tsx page includes a Gatsby query to fetch those images and build the gallery
-- Step 5: Edit the 'gatsby-config.js' with your information as well as pages like the 'about' page.
-- Step 6: After you've organized your site, test it out using 'gatsby develop' in the Terminal and adjust to your needs!
+- Step 5: Review how I organized the 'year' folder with a file named '1990.tsx' for each year. Add or delete files with a year that you have not created work. The app builds the 'year' menu based on what's in this folder and then finds all the images that start with that year in their filename. If you keep the pages I have included but have no work for that year, the page will be empty. Otherwise, the page builds a gallery from all work created in that year.
+- Step 6: Edit the 'gatsby-config.js' with your information as well as pages like the 'about' page.
+- Step 7: After you've organized your site, test it out using 'gatsby develop' in the Terminal and adjust to your needs!
 
