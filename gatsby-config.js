@@ -12,7 +12,7 @@ module.exports = {
     title: `Bryan Leister`,
     description: `Bryan Leister's paintings, prints, installations, interactive and generative artwork.`,
     author: `@rtboy`,
-    siteUrl: `https://bryanleister.com/new/`,
+    siteUrl: `https://bryanleister.com/`,
   },
   plugins: [
     {
