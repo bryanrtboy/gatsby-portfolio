@@ -647,6 +647,13 @@ pre tt:after {
   z-index: 9999; /* a high value */
 }
 
+.sub-menu {
+  position: absolute;
+  right: 0;
+  top: -2.45rem;
+  margin-bottom: 0;
+}
+
 .parent-menu:hover .child-menu {
   visibility: visible;
 }

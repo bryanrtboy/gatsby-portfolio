@@ -1,11 +1,11 @@
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import * as React from "react"
 import { IGatsbyImageData } from "gatsby-plugin-image"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import Gallery from "@browniebroke/gatsby-image-gallery"
 
-const pageTitle: string = "installations"
+const pageTitle: string = "installations : becky"
 
 interface ImageSharpEdge {
   node: {
@@ -58,37 +58,6 @@ const IndexPage: React.FC<PageProps> = ({ data }) => {
     <Layout>
       <SEO title={pageTitle} />
       <h6>{pageTitle}</h6>
-      <div
-        style={{
-          position: "relative",
-        }}
-      >
-        <ul
-          class="sub-menu"
-          style={{
-            textDecoration: "none",
-            display: "inline",
-          }}
-        >
-          <li
-            style={{
-              textDecoration: "none",
-              display: "inline",
-            }}
-          >
-            <Link
-              to="/installations/becky"
-              style={{
-                color: "black",
-                textDecoration: "none",
-                display: "inline-block",
-              }}
-            >
-              becky
-            </Link>
-          </li>
-        </ul>
-      </div>
       <Gallery
         images={images}
         lightboxOptions={lightboxOptions}
@@ -101,7 +70,12 @@ const IndexPage: React.FC<PageProps> = ({ data }) => {
 export const pageQuery = graphql`
   query ImagesForGallery {
     images: allFile(
-      filter: { relativeDirectory: { eq: "images/installations" } }
+      filter: {
+        relativeDirectory: { eq: "images/installations" }
+        childImageSharp: {
+          fields: { exif: { raw: { image: { Artist: { eq: "Becky" } } } } }
+        }
+      }
       sort: { name: ASC }
     ) {
       edges {
