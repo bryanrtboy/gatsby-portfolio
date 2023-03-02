@@ -30,3 +30,9 @@ This is not designed to be a blog site with frequent text updates. The single go
 - Step 6: Edit the 'gatsby-config.js' with your information as well as pages like the 'about' page.
 - Step 7: After you've organized your site, test it out using 'gatsby develop' in the Terminal and adjust to your needs!
 
+## Other Details
+
+I have a category 'installations' that includes all images from an installation project. But, I'd like to also have a gallery page devoted to a specific installation. To do that, I've created a directory called 'installations' and a page file to select and load only images from that specific installation. That way, I can add a description of the project, and also all of the images. In this test example, I've called the installation 'becky' and filtered based on the EXIF field Artist. That way, it finds all the images in the 'images/installations' folder and also only images where the Artist is Becky.
+
+The hack I'm using so the URL is pretty is to create a directory in Pages called 'installations' outside of the 'work' directory. If I put that sub-directory into the 'work' folder, it shows up in the auto-generated menu and I'd rather just hard-code it into the installations.tsx file.
+
