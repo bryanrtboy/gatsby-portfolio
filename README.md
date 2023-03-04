@@ -10,6 +10,16 @@ A headless server website that is fast, responsive and easy to maintain for a la
 
 This is not designed to be a blog site with frequent text updates. The single goal for this implementation is to display a large quantity of artwork organized by media and chronologically in a minimalist gallery-like format. Updates are primarily adding new images, but of course simple updates to the 'About' page can be easily done. One could easily add Gatsby blog-like functionality to the site, but it's left out in this version to keep it simple and easy to maintain.
 
+## How it works
+
+Many Gatsby sites use .md files to get information about a post, like a blog or if you only have a few images. This requires a separate file with 'tags' and information like the artist name, date, etc. Since my site will have hundreds of images, I didn't want to have to create a corresponding text file for each image. Especially when you consider that a properly prepared image file can include all kinds of information in it's metadate, which is accessible as EXIF data. I also am taking advantage of the filename for easy sorting and getting the title of the image.
+
+Therefore, any extra data like author, size, location should all be encoded in the photo's EXIF data and fetched as needed. The two exceptions are the date and title of the image. When naming the images the date must always be first and in this format:  2020-03-21-  That makes the date the first 10 characters which will be removed via a regex function. The remaining characters are the title of the image, with a dash being converted to a space. So the filename '2020-03-21-My-First-Image.jpg' will be sorted and organized by it's date, with the stripped title becoming "My First Image" on the photo caption.
+
+Each gallery page will be sorted by date with most recent images at the top. The entire site is searched with the 'recent' page returning the most recently created 20 images.
+
+The downside to this technique is that unlike .md  files, we can't pass a variable in the URL (as far as I can tell) and so I have to create a new page for sorting and organizing. In other words, clicking on 'recent' or a year acts like a 'tag' would in a Gatsby blog post, but in reality it's loading a page that is hardcoded with the appropriate filter. This means a lot of duplicate code and a few more pages, but I think outweighs the alternative of making a .md file for every image.
+
 ## Installation Instructions
 
 - Step 1: Setup a [Gatsby](https://www.gatsbyjs.com/) site on your local development machine. Use a simple template, this will include instructions for installing Node.js and all the dependencies.
