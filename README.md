@@ -12,7 +12,7 @@ This is not designed to be a blog site with frequent text updates. The single go
 
 ## How it works
 
-Many Gatsby sites use .md files to get information about a post, like a blog. If you only have a few images you could also make a .md file for every image and include tags and other information like the artist name, date, etc. Since my site will have hundreds of images, I don't want to create a corresponding text file for each image. Especially when you consider that a properly prepared image file can include all kinds of information in it's metadate, which is accessible as EXIF data. 
+Many Gatsby sites use .md files to get information about a post, like a blog site where one .md file equals a blog post and includes metadata about the post. If you only have a few images you could also make a .md file for every image and include tags and other information like the artist name, date, etc. Since my site will have hundreds of images, I don't want to create a corresponding .md file for each image. Especially when you consider that a properly prepared image file can include all kinds of information in it's metadate, which is accessible as EXIF data. 
 
 I also am taking advantage of the filename for easy sorting by date and accessing the title of the image. For longevity and cataloging purposes, this will insure that the date and title always are obvious and permanent, making it easy to locate and sort my images on my local computer. Any extra data like author, size, location will all be encoded in the photo's EXIF data and fetched as needed. 
 
