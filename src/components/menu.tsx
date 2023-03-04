@@ -62,13 +62,15 @@ export default function Menu() {
                 textDecoration: "none",
               }}
             >
-              <span
+              <input type="checkbox" id="year" />
+              <label
+                for="year"
                 style={{
                   color: "black",
                 }}
               >
                 year
-              </span>
+              </label>
               <YearMenu />
             </div>
           </li>

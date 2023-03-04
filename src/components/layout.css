@@ -639,8 +639,8 @@ pre tt:after {
 .child-menu {
   position: absolute;
   list-style-type: none;
-  visibility: hidden;
-  background-color: #f1f1f1;
+  background-color: white;
+  border: 1px solid hsla(0, 0%, 0%, 0.5);
   top: 100%;
   left: 0;
   margin-left: -30px;
@@ -654,10 +654,6 @@ pre tt:after {
   margin-bottom: 0;
 }
 
-.parent-menu:hover .child-menu {
-  visibility: visible;
-}
-
 #toggle {
   display: none;
 }
@@ -668,6 +664,29 @@ pre tt:after {
   text-decoration: none;
   display: inline-block;
   z-index: 8888;
+}
+
+/* Hide the checkbox */
+#year {
+  display: none;
+}
+
+/* Style the label as a button */
+#year + label {
+  display: inline-block;
+  padding: 10px;
+  background: white;
+  cursor: pointer;
+}
+
+/* Hide the UL list by default */
+#year + label + ul {
+  display: none;
+}
+
+/* Show the UL list when checkbox is checked */
+#year:checked + label + ul {
+  display: block;
 }
 
 @media only screen and (max-width: 480px) {
