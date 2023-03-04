@@ -18,7 +18,10 @@ I also am taking advantage of the filename for easy sorting by date and accessin
 
 When naming the images the date must always be first and in this format:  2020-03-21-  That makes the date the first 10 characters which will be removed via a regex function. The remaining characters are the title of the image, with a dash being converted to a space. So the filename '2020-03-21-My-First-Image.jpg' will be sorted and organized by it's date - the stripped title becomes "My First Image" on the photo caption.
 
-Each gallery page will be sorted by date with most recent images at the top. To create a 'tag' like function, I use individual pages that are filtered with a keyword found either in the image name (for the date) or in the EXIF data to find work by a specific artist. Any EXIF property could be used of course. 
+To create a 'tag' like function, I use individual pages that are filtered in a few different ways:
+- By folder where the image is located, i.e. 'paintings'
+- By date contained in the filename, regardless what folder it was in
+- By keyword contained in the EXIF data, in this example all images in the 'installations' folder are filtered by the author field in the EXIF data
 
 The downside to this technique is that unlike .md  files, we can't pass a variable in the URL (as far as I can tell) which would allow for one template search block of code to be re-used. Instead, I have to create a new page for sorting and organizing. In other words, clicking on 'recent' or a year acts like a 'tag' would in a Gatsby blog post, but in reality it's loading a page that is hardcoded with the appropriate filter. This means a lot of duplicate code and a few more pages, but I think it outweighs the alternative of making a .md file for every image. From my research the reason pages in Gatsby are not allowed to pass variables via URL is a security risk, so this implementation is probably safer.
 
