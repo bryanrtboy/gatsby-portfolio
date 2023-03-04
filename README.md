@@ -1,3 +1,6 @@
+
+![gatsby portfolio screenshot](screenshot.png)
+
 <h1 align="center">
   A Gatsby Image Portfolio
 </h1>
