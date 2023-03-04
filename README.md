@@ -1,9 +1,6 @@
+# A Gatsby Image Portfolio
 
 ![gatsby portfolio screenshot](screenshot.png)
-
-<h1 align="center">
-  A Gatsby Image Portfolio
-</h1>
 
 A portfolio site built with [Gatsby](https://www.gatsbyjs.com/), based off of [gatsby-image-gallery](https://github.com/browniebroke/gatsby-image-gallery) by [@browniebroke](https://github.com/browniebroke). I also have added EXIF data using [@thomasgassmann](https://github.com/thomasgassmann)'s excellent [gatsby-plugin-sharp-exif](https://github.com/thomasgassmann/gatsby-plugin-sharp-exif) plugin.
 
