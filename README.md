@@ -27,12 +27,13 @@ The downside to this technique is that unlike .md  files, we can't pass a variab
 
 ## Installation Instructions
 
-- Step 1: Setup a [Gatsby](https://www.gatsbyjs.com/) site on your local development machine. Use a simple template, this will include instructions for installing Node.js and all the dependencies.
+- Step 1: Setup a [Gatsby](https://www.gatsbyjs.com/) site on your local development machine. Use a simple template, this will include instructions for installing Node.js and all the dependencies. You aren't actually going to use this site, it's just the easiest way to get all the things installed that you need to work with Gatsby.
 - Step 2: Use a good text editor like Atom (just found out it's now deprecated, so something similar like Sublime) to organize and edit your text files.
-- Step 3: Download or clone this repository
-- Step 4: Using Terminal (OSX) or other command-line interface navigate to the 'gatsby-portfolio' on your hard drive - 'cd /Users/bryan/Documents/GitHub/gatsby-portfolio'
-- Step 5: In Terminal, run the command 'npm install'
+- Step 3: Download or clone this repository, this will be your new site.
+- Step 4: Using Terminal (OSX) or other command-line interface navigate to the clone on your hard drive. For example - 'cd /Users/bryan/Documents/GitHub/gatsby-portfolio'
+- Step 5: In Terminal, run the command 'npm install' once you are inside the cloned folder
 - Step 6: Once all the packages are installed, run the command 'gatsby develop' and verify that it working in your browser
+- Step 7: Edit the 'gatsby-config.js' file with your information. All of the other pages are in the src/pages directory, edit to your liking. All of the images are in the src/content/images folder - add folders and images here as desired. The CSS files and menus are in src/components/ folder, edit as desired.
 
 ## How To Use With Your Own Images
 
