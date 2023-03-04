@@ -644,7 +644,7 @@ pre tt:after {
   top: 100%;
   left: 0;
   margin-left: -30px;
-  z-index: 9999; /* a high value */
+  z-index: 8888; /* a high value */
 }
 
 .sub-menu {
@@ -657,8 +657,94 @@ pre tt:after {
 .parent-menu:hover .child-menu {
   visibility: visible;
 }
+
+#toggle {
+  display: none;
+}
+
+.menu ul,
+.menu ul li {
+  list-style-type: none;
+  text-decoration: none;
+  display: inline-block;
+  z-index: 8888;
+}
+
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
+  }
+
+  .hamburger {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: black; /* Change this color as you like */
+    margin-bottom: 5px;
+    transition: all 0.3s ease-in-out; /* Add some transition for smooth animation */
+  }
+
+  .menu {
+    position: absolute;
+    top: 0;
+    left: -100%; /* Hide it off-screen by default */
+    width: 100%;
+    height: 100%;
+    background-color: white; /* Change this color as you like */
+    transition: left 0.3s ease-in-out; /* Add some transition for smooth animation */
+  }
+  .menu ul {
+    position: relative;
+    z-index: 8888;
+    background-color: white;
+  }
+
+  .menu ul li {
+    position: relative;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    display: block;
+    border: 1px;
+  }
+
+  .menu li,
+  .child-menu {
+    display: block;
+    z-index: 9999;
+    visibility: visible;
+  }
+
+  .parent-menu span {
+    position: absolute;
+    top: 0;
+    z-index: 9999;
+  }
+
+  #toggle:checked ~ .hamburger span:nth-child(1) {
+    transform-origin: center center;
+    transform: rotate(45deg); /* Rotate first bar by 45 degrees clockwise */
+  }
+
+  #toggle:checked ~ .hamburger span:nth-child(2) {
+    opacity: 0; /* Hide second bar */
+  }
+
+  #toggle:checked ~ .hamburger span:nth-child(3) {
+    transform-origin: center center;
+    transform: rotate(
+      -45deg
+    ); /* Rotate third bar by -45 degrees counter-clockwise */
+  }
+
+  #toggle:checked ~ .menu {
+    left: 0; /* Show menu on-screen when checked */
   }
 }

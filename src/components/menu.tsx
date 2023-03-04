@@ -17,61 +17,63 @@ export default function Menu() {
     }
   `)
   return (
-    <ul>
-      <li
-        key="/about/"
-        style={{
-          textDecoration: "none",
-          display: "inline",
-        }}
-      >
-        <Link
-          to="/about/"
-          style={{
-            color: "black",
-            textDecoration: "none",
-            display: "inline-block",
-          }}
-        >
-          about
-        </Link>
-      </li>{" "}
-      {data.allSitePage.nodes.map(node => (
-        <li
-          key={node.path}
-          style={{
-            textDecoration: "none",
-            display: "inline",
-          }}
-        >
-          <Link
-            to={node.path}
+    <>
+      <input type="checkbox" id="toggle" />
+      <label className="hamburger" htmlFor="toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <div className="menu">
+        <ul>
+          <li key="/about/">
+            <Link
+              to="/about/"
+              style={{
+                color: "black",
+                textDecoration: "none",
+              }}
+            >
+              about
+            </Link>
+          </li>{" "}
+          {data.allSitePage.nodes.map(node => (
+            <li key={node.path}>
+              <Link
+                to={node.path}
+                style={{
+                  color: "black",
+                  textDecoration: "none",
+                }}
+              >
+                {node.path.replace(/\/work\//g, "").replace(/\/$/, "")}
+              </Link>
+            </li>
+          ))}
+          <li
             style={{
-              color: "black",
               textDecoration: "none",
-              display: "inline-block",
+              display: "inline",
             }}
           >
-            {node.path.replace(/\/work\//g, "").replace(/\/$/, "")}
-          </Link>
-        </li>
-      ))}
-      <li
-        style={{
-          textDecoration: "none",
-          display: "inline",
-        }}
-      >
-        <div
-          class="parent-menu"
-          style={{
-            textDecoration: "none",
-          }}
-        >
-          year
-          <YearMenu />
-        </div>
-      </li>
-    </ul>
+            <div
+              class="parent-menu"
+              style={{
+                textDecoration: "none",
+              }}
+            >
+              <span
+                style={{
+                  color: "black",
+                }}
+              >
+                year
+              </span>
+              <YearMenu />
+            </div>
+          </li>
+        </ul>
+      </div>
+    </>
   )
 }
