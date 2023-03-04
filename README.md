@@ -28,7 +28,7 @@ The downside to this technique is that unlike .md  files, we can't pass a variab
 ## Installation Instructions
 
 - Step 1: Setup a [Gatsby](https://www.gatsbyjs.com/) site on your local development machine. Use a simple template, this will include instructions for installing Node.js and all the dependencies.
-= Step 2: Use a good text editor like Atom (just found out it's now deprecated, so something similar like Sublime) to organize and edit your text files.
+- Step 2: Use a good text editor like Atom (just found out it's now deprecated, so something similar like Sublime) to organize and edit your text files.
 - Step 3: Download or clone this repository
 - Step 4: Using Terminal (OSX) or other command-line interface navigate to the 'gatsby-portfolio' on your hard drive - 'cd /Users/bryan/Documents/GitHub/gatsby-portfolio'
 - Step 5: In Terminal, run the command 'npm install'
