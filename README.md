@@ -8,7 +8,7 @@ A portfolio site built with [Gatsby](https://www.gatsbyjs.com/), based off of [g
 
 A headless server website that is fast, responsive and easy to maintain for a large database of images. Gatsby automatically generates multiple resolutions of the image files, allowing for fast loading on any device. The site concept is to use the image filenames for date sorting and additional data will be contained within the image's EXIF data, such as author, media, keywords, and more.
 
-This is not designed to be a blog site with frequent text updates. The single goal for this implementation is to display a large quantity of artwork organized by media and chronologically in a minimalist gallery-like format. Updates are primarily adding new images, but of course simple updates to the 'About' page can be easily done. One could easily add Gatsby blog-like functionality to the site, but it's left out in this version to keep it simple and easy to maintain.
+This is not designed to be a blog site with frequent text updates. The single goal for this implementation is to display a large quantity of images in a minimalist gallery-like format. Updates will simply be adding properly named new images in the appropriate folders. Simple text updates can be easily done by editing a pages code. One could easily add Gatsby blog-like functionality to the site, but it's left out in this version to keep it simple and easy to maintain.
 
 ## How it works
 
