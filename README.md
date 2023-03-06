@@ -52,6 +52,8 @@ You can organize your images using either the folder they reside in or by querie
 
 The category 'installations' includes all images from any installation project. The intallations.tsx page shows how to make a menu item for a sub-page (becky.tsx) by passing it to the lightbox component as a subMenu. Becky.tsx is located outside the 'work' directory because any pages inside 'work' become a menu item, so I couldn't put becky.tsx there as one might expect. The URL looks fine though, since it's in '/installations/becky'
 
+Using this design pattern, one could make a 'paintings' category that loads ALL paintings, and then sub-menu pages to load 'oils', 'gouache', etc. so that it appears to filter the paintings by sub-category tags. Since each sub-category has it's own page, one could also write a block of copy to introduce the category and create a property in the lightbox.tsx to use to pass that information, similar to how the subMenu property works.
+
 There is a 'Details' link in the popup lightbox images that include a Description in their EXIF data, this pops up to show the complete description. I sometimes had build errors if none of the images had any Description, so best practice is to include a description for all images.
 
 The other data that's important to me is the size and media of each image. The title and date are built using the filename, so in the EXIF Creator metadata of the image ('Artist' in Gatsby queries), I write out how I want that to appear information - "Bryan Leister | 11" X 14" | oil on board"  In theory, I could create a Regex to clean up that information if I didn't want to include my name for example.   
