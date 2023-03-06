@@ -673,6 +673,7 @@ pre tt:after {
   margin-bottom: 0;
 }
 
+/* Checkbox hack to show hamburger menu on mobile */
 #toggle {
   display: none;
 }
@@ -689,12 +690,11 @@ pre tt:after {
   margin-bottom: 1rem;
 }
 
-/* Hide the checkbox */
+/* Checkbox hack to show year menu */
 #year {
   display: none;
 }
 
-/* Style the label as a button */
 #year + label {
   display: inline-block;
   padding: 10px;
@@ -702,14 +702,33 @@ pre tt:after {
   cursor: pointer;
 }
 
-/* Hide the UL list by default */
 #year + label + ul {
   display: none;
 }
 
-/* Show the UL list when checkbox is checked */
 #year:checked + label + ul {
   display: block;
+}
+
+/*Detailed Checkbox Hack to show image description*/
+
+.hidden {
+  display: none;
+}
+
+.button {
+  cursor: pointer;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.details {
+  display: none;
+}
+
+#detailToggle:checked + .button + .details {
+  display: block;
+  margin: 1rem;
 }
 
 @media only screen and (max-width: 480px) {

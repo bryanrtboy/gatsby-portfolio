@@ -1,64 +1,13 @@
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { Link, graphql } from "gatsby"
 import * as React from "react"
-import { IGatsbyImageData } from "gatsby-plugin-image"
-import Layout from "../../components/layout"
-import SEO from "../../components/seo"
-import Gallery from "@browniebroke/gatsby-image-gallery"
-
-const pageTitle: string = "installations"
-
-interface ImageSharpEdge {
-  node: {
-    childImageSharp: {
-      thumb: IGatsbyImageData
-      full: IGatsbyImageData
-    }
-  }
-}
-
-interface PageProps {
-  data: {
-    images: {
-      edges: ImageSharpEdge[]
-    }
-  }
-  title: string
-}
+import Lightbox from "../../components/lightbox"
 
 const IndexPage: React.FC<PageProps> = ({ data }) => {
-  const images = data.images.edges.map(({ node }, index) => ({
-    ...node.childImageSharp,
-    // Use the filename stripped of date prefix to name the file
-    caption: `${
-      "title: " +
-      node.name.replace(/^.{10}|-/g, " ") +
-      ", " +
-      node.name.slice(0, 4) +
-      " " +
-      node.childImageSharp.fields.exif.raw.image.Artist
-    }`,
-  }))
-
-  // Override some of Lightbox options to localise labels in French
-  const lightboxOptions = {
-    imageLoadErrorMessage: "Image did not load",
-    nextLabel: "Next",
-    prevLabel: "Previous",
-    zoomInLabel: "Zoom In",
-    zoomOutLabel: "Zoom Out",
-    closeLabel: "Close",
-  }
-
-  //Add callback to Lightbox onCloseRequest
-  const onClose = () => {
-    console.log("Lightbox was closed")
-  }
-
   return (
-    <Layout>
-      <SEO title={pageTitle} />
-      <h6>{pageTitle}</h6>
-      <div
+    <Lightbox
+      data={data}
+      pageTitle="installations"
+      subMenu=<div
         style={{
           position: "relative",
         }}
@@ -84,25 +33,20 @@ const IndexPage: React.FC<PageProps> = ({ data }) => {
                 display: "inline-block",
               }}
             >
-              becky
+              Becky
             </Link>
           </li>
         </ul>
       </div>
-      <Gallery
-        images={images}
-        lightboxOptions={lightboxOptions}
-        onClose={onClose}
-        // rowMargin="-5"
-      />
-    </Layout>
+    />
   )
 }
+
 export const pageQuery = graphql`
   query ImagesForGallery {
     images: allFile(
       filter: { relativeDirectory: { eq: "images/installations" } }
-      sort: { name: ASC }
+      sort: { name: DESC }
     ) {
       edges {
         node {
@@ -118,6 +62,7 @@ export const pageQuery = graphql`
                 raw {
                   image {
                     Artist
+                    ImageDescription
                   }
                 }
               }

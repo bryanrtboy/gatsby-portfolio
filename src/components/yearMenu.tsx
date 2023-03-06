@@ -4,7 +4,10 @@ import * as React from "react"
 export default function YearMenu() {
   const data = useStaticQuery(graphql`
     query Links {
-      allSitePage(filter: { path: { regex: "/(year)/.+/" } }) {
+      allSitePage(
+        filter: { path: { regex: "/(year)/.+/" } }
+        sort: { path: DESC }
+      ) {
         nodes {
           path
         }
