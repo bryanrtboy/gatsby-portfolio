@@ -48,7 +48,11 @@ The downside to this technique is that unlike .md  files, we can't pass a variab
 
 ## Other Details
 
-I have a category 'installations' that includes all images from an installation project. But, I'd like to also have a gallery page devoted to a specific installation. To do that, I've created a directory called 'installations' and a page file to select and load only images from that specific installation. That way, I can add a description of the project, and also all of the images. In this test example, I've called the installation 'becky' and filtered based on the EXIF field Artist. That way, it finds all the images in the 'images/installations' folder and also only images where the Artist is Becky.
+You can organize your images using either the folder they reside in or by queries using the filename, Artist or ImageDescription. The year pages show how to query the filename and the 'becky.tsx' shows how to query the Artist name for images inside the /images/installations/ folder.
 
-The hack I'm using so the URL is pretty is to create a directory in Pages called 'installations' outside of the 'work' directory. If I put that sub-directory into the 'work' folder, it shows up in the auto-generated menu and I'd rather just hard-code it into the installations.tsx file.
+I have a category 'installations' that includes all images from any installation project. I also use that page to demonstrate passing a sub-menu page to build pages for a specific installation called 'becky' that is located outside the 'work' directory. Since I don't want to upload more than one copy of the images, I use a query on the 'becky.tsx' page to grab the images.
+
+There is a 'Details' link in images that include a Description in their EXIF data, this pops up to show the complete description. I sometimes had build errors if none of the images had any Description, so best practice is to include a description for all images.
+
+The other data that's important to me is the size and media of each image. The title and date are built using the filename, so in the EXIF Creator metadata of the image ('Artist' in Gatsby queries), I write out how I want that to appear information - "Bryan Leister | 11" X 14" | oil on board"  In theory, I could create a Regex to clean up that information if I didn't want to include my name for example.   
 
