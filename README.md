@@ -50,9 +50,9 @@ The downside to this technique is that unlike .md  files, we can't pass a variab
 
 You can organize your images using either the folder they reside in or by queries using the filename, Artist or ImageDescription. The year pages show how to query the filename and the 'becky.tsx' shows how to query the Artist name for images inside the /images/installations/ folder.
 
-I have a category 'installations' that includes all images from any installation project. I also use that page to demonstrate passing a sub-menu page to build pages for a specific installation called 'becky' that is located outside the 'work' directory. Since I don't want to upload more than one copy of the images, I use a query on the 'becky.tsx' page to grab the images.
+The category 'installations' includes all images from any installation project. The intallations.tsx page shows how to make a menu item for a sub-page (becky.tsx) by passing it to the lightbox component as a subMenu. Becky.tsx is located outside the 'work' directory because any pages inside 'work' become a menu item, so I couldn't put becky.tsx there as one might expect. The URL looks fine though, since it's in '/installations/becky'
 
-There is a 'Details' link in images that include a Description in their EXIF data, this pops up to show the complete description. I sometimes had build errors if none of the images had any Description, so best practice is to include a description for all images.
+There is a 'Details' link in the popup lightbox images that include a Description in their EXIF data, this pops up to show the complete description. I sometimes had build errors if none of the images had any Description, so best practice is to include a description for all images.
 
 The other data that's important to me is the size and media of each image. The title and date are built using the filename, so in the EXIF Creator metadata of the image ('Artist' in Gatsby queries), I write out how I want that to appear information - "Bryan Leister | 11" X 14" | oil on board"  In theory, I could create a Regex to clean up that information if I didn't want to include my name for example.   
 
